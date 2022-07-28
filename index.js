@@ -7,7 +7,7 @@ const directory = env === "test" ? "./__mocks__" : "./public/content"
 const path = require('path');
 
 const app = express();
-const port = process.env.port || 5005;
+const port = process.env.PORT || 5005;
 
 const options = {
   dotfiles: "ignore",
