@@ -1,0 +1,54 @@
+    html {
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.594)), url(/img/background.png) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Cairo');
+
+    h1 {
+      font-family: "Cairo", sans-serif;
+      text-align: center;
+      font-size: 100px;
+      line-height: 300px;
+      position: relative;
+      color: transparent;
+      padding: 10px;
+      overflow: hidden;
+      margin: 20px;
+      animation: textappear .1s .5s forwards;
+    }
+
+    p {
+      font-family: "Cairo", sans-serif;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    h1::before {
+      content: '';
+      position: absolute;
+      background: rgba(237, 117, 5, 0.8);
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      animation: sliderRight 2s forwards;
+    }
+
+    @keyframes textappear {
+      100% {
+        color: rgba(237, 117, 5, 0.8);
+      }
+    }
+
+    @keyframes sliderRight {
+      0% {
+        right: 100%;
+      }
+
+      100% {
+        right: -100%;
+      }
+    }
