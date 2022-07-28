@@ -1,24 +1,36 @@
+    @import url('https://fonts.googleapis.com/css?family=Cairo');
+
     html {
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(170, 0, 0, 0.2)), url(/img/background.png) no-repeat center center fixed;
+      background: url(/img/background.png) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
 
-    @import url('https://fonts.googleapis.com/css?family=Cairo');
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
     h1 {
       font-family: "Cairo", sans-serif;
       text-align: center;
       font-size: 100px;
-      line-height: 300px;
+      line-height: 200px;
       position: relative;
       color: transparent;
       padding: 10px;
       overflow: hidden;
-      margin: 20px;
-      animation: textappear .1s .5s forwards;
+      margin-bottom: 100px;
+      margin-top: 0;
+      animation: textappear .1s .6s forwards;
+      padding-left: 100px;
+      padding-right: 100px;
     }
 
     p {
@@ -33,7 +45,16 @@
       margin-right: auto;
       margin-top: 0;
       margin-bottom: 0;
-      padding: 24px;
+      padding: 48px;
+      box-shadow: 0 9px 0px 0px whitesmoke, 0 -9px 0px 0px whitesmoke, 12px 0 15px -4px rgba(91, 1, 1, 0.8), -12px 0 15px -4px rgba(91, 1, 1, 0.8);
+    }
+
+    p:first-of-type {
+      border-radius: 10px 10px 0 0;
+    }
+
+    P:last-of-type {
+      border-radius: 0 0 10px 10px;
     }
 
     h1::before {
