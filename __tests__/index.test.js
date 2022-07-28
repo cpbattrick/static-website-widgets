@@ -15,7 +15,7 @@ test('/test-page-2/subfolder returns 200 status with the correct text', async ()
   expect(text).toContain("Jobs at Acme Co.")
 });
 
-test('/abc returns 404 status', async () => {
+test('/bad-url returns 404 status', async () => {
   const { status, text } = await request(app).get('/bad-url');
 
   expect(status).toBe(404);
