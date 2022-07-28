@@ -25,19 +25,19 @@ app.use(express.static(path.join(__dirname, 'public'), options));
 
 app.get("*", (req, res) => {
   const templateHtml = fs.readFileSync("./template.html", "utf8");
+  const template = Handlebars.compile(templateHtml);
   const { path } = req;
   let content
 
   try {
     content = fs.readFileSync(`${directory}${path}/index.md`, "utf8");
   } catch (error) {
-    res.status(404).send("404 Not Found");
+    const errorHtml = template({ content: "<h1>404 Not Found</h1" });
+    res.status(404).send(errorHtml);
     return
   }
 
   const html = marked.parse(content);
-
-  const template = Handlebars.compile(templateHtml);
 
   const compiledHtml = template({
     content: html,
